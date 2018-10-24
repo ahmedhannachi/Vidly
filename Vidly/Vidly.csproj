@@ -210,6 +210,10 @@
     <Compile Include="Migrations\201810241806186_AddInitModels.Designer.cs">
       <DependentUpon>201810241806186_AddInitModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810241811509_PopulateGenresAndMembershipTypes.cs" />
+    <Compile Include="Migrations\201810241811509_PopulateGenresAndMembershipTypes.Designer.cs">
+      <DependentUpon>201810241811509_PopulateGenresAndMembershipTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -310,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810241806186_AddInitModels.resx">
       <DependentUpon>201810241806186_AddInitModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810241811509_PopulateGenresAndMembershipTypes.resx">
+      <DependentUpon>201810241811509_PopulateGenresAndMembershipTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
