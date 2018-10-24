@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -214,6 +215,22 @@
     <Compile Include="Migrations\201810241811509_PopulateGenresAndMembershipTypes.Designer.cs">
       <DependentUpon>201810241811509_PopulateGenresAndMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810241826443_RemoveGenreIdFromMovieAndMembershipTypeIdFromCustomer.cs" />
+    <Compile Include="Migrations\201810241826443_RemoveGenreIdFromMovieAndMembershipTypeIdFromCustomer.Designer.cs">
+      <DependentUpon>201810241826443_RemoveGenreIdFromMovieAndMembershipTypeIdFromCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810242102321_ChangeMembershipTypeIdToInt.cs" />
+    <Compile Include="Migrations\201810242102321_ChangeMembershipTypeIdToInt.Designer.cs">
+      <DependentUpon>201810242102321_ChangeMembershipTypeIdToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810242305581_AddMembershipTypeIdToCustomer.cs" />
+    <Compile Include="Migrations\201810242305581_AddMembershipTypeIdToCustomer.Designer.cs">
+      <DependentUpon>201810242305581_AddMembershipTypeIdToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810242323307_AddGenreIdToMovie.cs" />
+    <Compile Include="Migrations\201810242323307_AddGenreIdToMovie.Designer.cs">
+      <DependentUpon>201810242323307_AddGenreIdToMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -317,6 +334,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810241811509_PopulateGenresAndMembershipTypes.resx">
       <DependentUpon>201810241811509_PopulateGenresAndMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810241826443_RemoveGenreIdFromMovieAndMembershipTypeIdFromCustomer.resx">
+      <DependentUpon>201810241826443_RemoveGenreIdFromMovieAndMembershipTypeIdFromCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810242102321_ChangeMembershipTypeIdToInt.resx">
+      <DependentUpon>201810242102321_ChangeMembershipTypeIdToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810242305581_AddMembershipTypeIdToCustomer.resx">
+      <DependentUpon>201810242305581_AddMembershipTypeIdToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810242323307_AddGenreIdToMovie.resx">
+      <DependentUpon>201810242323307_AddGenreIdToMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

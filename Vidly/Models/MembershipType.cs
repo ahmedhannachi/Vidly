@@ -9,7 +9,8 @@ namespace Vidly.Models
 {
     public class MembershipType
     {
-        public byte Id { get; set; }
+        [Display(Name = "Membership Type")]
+        public int Id { get; set; }
         [StringLength(20)]
         public string Name { get; set; }
         public short SignUpFee { get; set; }

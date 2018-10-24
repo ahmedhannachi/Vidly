@@ -8,6 +8,7 @@ namespace Vidly.Models
 {
     public class Genre
     {
+        [Display(Name = "Genre")]
         public int Id { get; set; }
         [StringLength(10)]
         public string Name { get; set; }
