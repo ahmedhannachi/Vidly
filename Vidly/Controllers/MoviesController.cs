@@ -30,6 +30,7 @@ namespace Vidly.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Movie movie)
         {
             _context.Movies.Add(movie);
@@ -49,6 +50,7 @@ namespace Vidly.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Update(Movie movie)
         {
             Movie MovieInDbContext = _context.Movies.Single(m => m.Id == movie.Id);

@@ -28,23 +28,43 @@ namespace Vidly.Controllers
         {
             var ViewModel = new CustomerFormViewModel()
             {
-                MembershipTypes = _context.MembershipTypes.ToList(),
+                MembershipTypes = _context.MembershipTypes.ToList()
             };
 
             return View("CustomerForm",ViewModel);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                CustomerFormViewModel customerFormViewModel = new CustomerFormViewModel()
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+                return View("CustomerForm", customerFormViewModel);
+            }
             _context.Customers.Add(customer);
             _context.SaveChanges();
             return RedirectToAction("List", "Customers");
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Update(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                CustomerFormViewModel customerFormViewModel = new CustomerFormViewModel()
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+                return View("CustomerForm", customerFormViewModel);
+            }
             Customer customerInDbContext = _context.Customers.Single(c => c.Id == customer.Id);
             customerInDbContext.Name = customer.Name;
             customerInDbContext.BirthDay = customer.BirthDay;
