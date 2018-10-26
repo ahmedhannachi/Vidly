@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Data.Entity.Core.Mapping;
-using System.Linq;
-using System.Web;
 
 namespace Vidly.Models
 {
@@ -23,7 +19,6 @@ namespace Vidly.Models
         public int MembershipTypeId { get; set; }
 
         [Display(Name = "Date of birth")]
-        [Min18YearsOldIfMember]
         public DateTime? BirthDay { get; set; }
     }
 
