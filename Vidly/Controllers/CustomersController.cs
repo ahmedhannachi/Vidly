@@ -82,7 +82,7 @@ namespace Vidly.Controllers
         [Route("Customers/list")]
         public ActionResult List()
         {
-            return View(this.getCustomers());
+            return View();
         }
 
         public ActionResult Edit(int id)
