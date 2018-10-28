@@ -14,6 +14,10 @@ namespace Vidly.Models
         [MaxLength(255)]
         [Display(Name = "Driver licence")]
         public string DrivingLicence { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string Phone { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -74,6 +78,10 @@ namespace Vidly.Models
         [MaxLength(255)]
         [Display(Name = "Driving Licence")]
         public string DrivingLicence { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string Phone { get; set; }
 
         [Required]
         [EmailAddress]
