@@ -16,8 +16,15 @@
 
 
             <ul class="nav navbar-nav navbar-right">
-                <li>@Html.ActionLink("Register", "Register", "Account")</li>
-                <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a href="javascript:;">Welcome @User.Identity.Name</a></li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                }
             </ul>
         </div>
     </div>

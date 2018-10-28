@@ -18,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44310</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -260,6 +260,10 @@
     <Compile Include="Migrations\201810281857167_SeedUsers.Designer.cs">
       <DependentUpon>201810281857167_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810281933181_AddDrivingLicenceToEdentiyUser.cs" />
+    <Compile Include="Migrations\201810281933181_AddDrivingLicenceToEdentiyUser.Designer.cs">
+      <DependentUpon>201810281933181_AddDrivingLicenceToEdentiyUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -268,6 +272,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
@@ -512,6 +517,7 @@
     <Content Include="Views\Movies\List.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Shared\_MainMenu.cshtml" />
+    <Content Include="Views\Movies\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -556,6 +562,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810281857167_SeedUsers.resx">
       <DependentUpon>201810281857167_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810281933181_AddDrivingLicenceToEdentiyUser.resx">
+      <DependentUpon>201810281933181_AddDrivingLicenceToEdentiyUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
