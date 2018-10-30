@@ -21,6 +21,22 @@ namespace Vidly.DTOs
         public DateTime AddedAt { get; set; }
         [Required]
         [Range(1, 20)]
+        [NumberInStockBiggerOrEqualToNumberRented]
         public int NumberInStock { get; set; }
+        [Required]
+        [Range(1, 20)]
+        public int NumberRented { get; set; }
+    }
+
+    public class NumberInStockBiggerOrEqualToNumberRented : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            MovieDto movieDto = (MovieDto) validationContext.ObjectInstance;
+            if( movieDto.NumberInStock<movieDto.NumberRented )
+                return new ValidationResult("Number in stock must be bigger than NumberRented");
+
+            return ValidationResult.Success;
+        }
     }
 }

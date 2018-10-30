@@ -19,7 +19,23 @@ namespace Vidly.Models
         [Required]
         public DateTime AddedAt { get; set; }
         [Required]
-        [Range(1,20)]
+        [Range(1, 20)]
         public int NumberInStock { get; set; }
+
+        [Required]
+        [Range(1, 20)]
+        public int NumberRented { get; set; }
+    }
+
+    public class NumberInStockBiggerOrEqualToNumberRented : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            Movie movieDto = (Movie)validationContext.ObjectInstance;
+            if (movieDto.NumberInStock < movieDto.NumberRented)
+                return new ValidationResult("Number in stock must be bigger than NumberRented");
+
+            return ValidationResult.Success;
+        }
     }
 }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using AutoMapper;
+using Vidly.DTOs;
 using Vidly.Models;
 using Vidly.ViewModels;
 
@@ -34,9 +36,9 @@ namespace Vidly.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = RoleName.canManageMovies)]
-        public ActionResult Create(Movie movie)
+        public ActionResult Create(MovieDto movieDto)
         {
-            _context.Movies.Add(movie);
+            _context.Movies.Add(Mapper.Map<MovieDto,Movie>(movieDto));
             _context.SaveChanges();
 
 
@@ -56,18 +58,18 @@ namespace Vidly.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = RoleName.canManageMovies)]
-        public ActionResult Update(Movie movie)
+        public ActionResult Update(MovieDto movieDto)
         {
-            Movie MovieInDbContext = _context.Movies.Single(m => m.Id == movie.Id);
-            MovieInDbContext.Name = movie.Name;
-            MovieInDbContext.AddedAt = movie.AddedAt;
-            MovieInDbContext.GenreId = movie.GenreId;
-            MovieInDbContext.NumberInStock = movie.NumberInStock;
-            MovieInDbContext.ReleaseDate= movie.ReleaseDate;
+            Movie MovieInDbContext = _context.Movies.Single(m => m.Id == movieDto.Id);
+            MovieInDbContext.Name = movieDto.Name;
+            MovieInDbContext.AddedAt = movieDto.AddedAt;
+            MovieInDbContext.GenreId = movieDto.GenreId;
+            MovieInDbContext.NumberInStock = movieDto.NumberInStock;
+            MovieInDbContext.ReleaseDate= movieDto.ReleaseDate;
             _context.SaveChanges();
 
 
-            return RedirectToAction("Edit", "Movies", new { Id = movie.Id });
+            return RedirectToAction("Edit", "Movies", new { Id = movieDto.Id });
         }
 
         [Authorize(Roles = RoleName.canManageMovies)]
